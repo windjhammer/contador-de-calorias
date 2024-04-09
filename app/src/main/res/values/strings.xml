@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ContadorDeCalorias</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Próximo</string>
+    <string name="previous">Anterior</string>
+
+    <string name="lorem_ipsum">
+        Teste de Texto.
+    </string>
+</resources>
