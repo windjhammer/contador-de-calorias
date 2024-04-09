@@ -5,11 +5,12 @@ import android.util.Log;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.widget.Toast;
 
 
 public class DBAdapter {
     private static final String databaseName = "calorias";
-    private static final int databaseVersion = 1;
+    private static final int databaseVersion = 5;
 
     private final Context context;
     private DatabaseHelper DBHelper;
@@ -29,7 +30,7 @@ public class DBAdapter {
                 try {
                     //criação das tabelas
                     db.execSQL("CREATE TABLE IF NOT EXISTS comidas " +
-                            " (comida_id INTEGEGER PRIMARY KEY AUTOINCREMENT, " +
+                            " (comida_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                             " comida_nome VARCHAR," +
                             " comida_produtor VARCHAR," +
                             " comida_porcao DOUBLE," +
@@ -52,7 +53,6 @@ public class DBAdapter {
                             " comida_imagem_b VARCHAR," +
                             " comida_imagem_c VARCHAR," +
                             " comida_nota VARCHAR);");
-
                 }
                 catch (SQLException e){
                     e.printStackTrace();
@@ -81,7 +81,7 @@ public class DBAdapter {
         DBHelper.close();
     }
 
-    public void insert(String comidas, String s, String table, String fields, String values){
+    public void insert(String table, String fields, String values){
         db.execSQL("INSERT INTO " + table + "(" + fields + ") VALUES (" + values + ")");
     }
 

@@ -18,10 +18,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         DBAdapter db = new DBAdapter(this);
         db.open();
-        db.insert("comidas", "comida_id, comida_nome, comida_produtor", "NULL", "Presunto", "Sadia");
+        db.insert("comidas", "comida_id, comida_nome, comida_produtor", "NULL , 'Presunto', 'Sadia'");
         db.close();
 
         Toast.makeText(this, "Banco de dados comidas foi criado.", Toast.LENGTH_LONG).show();
