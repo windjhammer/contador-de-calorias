@@ -5,7 +5,6 @@ import android.util.Log;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 
 public class DBAdapter {
@@ -81,7 +80,7 @@ public class DBAdapter {
         DBHelper.close();
     }
 
-    public void insert(String table, String fields, String values){
+    public void insert(String table, String fields){
         db.execSQL("INSERT INTO " + table + "(" + fields + ") VALUES (" + values + ")");
     }
 

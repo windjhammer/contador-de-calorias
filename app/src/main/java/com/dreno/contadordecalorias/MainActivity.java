@@ -20,7 +20,11 @@ public class MainActivity extends AppCompatActivity {
 
         DBAdapter db = new DBAdapter(this);
         db.open();
-        db.insert("comidas", "comida_id, comida_nome, comida_produtor", "NULL , 'Presunto', 'Sadia'");
+        //insert de teste
+        //db.insert("comidas", "comida_id, comida_nome, comida_produtor", "NULL , 'Presunto', 'Sadia'");
+
+        //criação das comidas na tabela
+        db.insert("comidas", "comida_id, comida_nome, comida_produtor, comida_porcao, comida_medidor_de_porcao, comida_calorias, comida_calorias_calculado, ");
         db.close();
 
         Toast.makeText(this, "Banco de dados comidas foi criado.", Toast.LENGTH_LONG).show();
