@@ -1,6 +1,7 @@
 package com.dreno.contadordecalorias;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.util.Log;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
@@ -9,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBAdapter {
     private static final String databaseName = "calorias";
-    private static final int databaseVersion = 5;
+    private static final int databaseVersion = 6;
 
     private final Context context;
     private DatabaseHelper DBHelper;
@@ -80,8 +81,16 @@ public class DBAdapter {
         DBHelper.close();
     }
 
-    public void insert(String table, String fields){
+    public void insert(String table, String fields, String values){
         db.execSQL("INSERT INTO " + table + "(" + fields + ") VALUES (" + values + ")");
+    }
+
+    public int contadorDeNotasGravadas (String table){
+        Cursor mCount = db.rawQuery("SELECT COUNT(*) FROM " + table + "", null);
+        mCount.moveToFirst();
+        int count = mCount.getInt(0);
+        mCount.close();
+        return count;
     }
 
 }
