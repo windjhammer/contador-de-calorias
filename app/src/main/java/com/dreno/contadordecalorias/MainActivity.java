@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
             db.insert("comidas", "comida_id, comida_nome, comida_produtor, comida_porcao, comida_medidor_de_porcao, comida_calorias, comida_calorias_calculado",
                     "NULL, 'Ovo, inteiro, cozido', 'Natural', '136.0', 'g', '211', '211'");
         }
+
+        DBSetupInsert setupInsert = new DBSetupInsert(this);
+        setupInsert.setupInsertToComidas("NULL, 'Amendoim Mendorato', 'Santa Helena', '27', 'g', '1', 'pct', '138', '4.6', '12', '8', NULL, NULL, NULL, NULL, NULL, NULL, '42', 'mendorato_thumb.jpg', 'mendorato_a.jpg', 'mendorato_b.jpg', 'mendorato_c.jpg', NULL");
         db.close();
     }
 }
