@@ -20,17 +20,14 @@ public class MainActivity extends AppCompatActivity {
 
         DBAdapter db = new DBAdapter(this);
         db.open();
-        
+
         //Contador de colunas na tabela comidas
         int numberRows = db.contadorDeNotasGravadas("comidas");
-        Toast.makeText(this, "Existem " + numberRows + " colunas na tabela", Toast.LENGTH_LONG).show();
 
-        //insert de teste
-        //db.insert("comidas", "comida_id, comida_nome, comida_produtor", "NULL , 'Presunto', 'Sadia'");
-        db.insert("comidas", "comida_id, comida_nome, comida_produtor, comida_porcao, comida_medidor_de_porcao, comida_calorias, comida_calorias_calculado",
-                                            "NULL, 'Ovo, inteiro, cozido', 'Natural', '136.0', 'g', '211', '211'");
-        //db.close();
-
-        Toast.makeText(this, "Banco de dados comidas foi criado.", Toast.LENGTH_LONG).show();
+        if (numberRows < 1){
+            db.insert("comidas", "comida_id, comida_nome, comida_produtor, comida_porcao, comida_medidor_de_porcao, comida_calorias, comida_calorias_calculado",
+                    "NULL, 'Ovo, inteiro, cozido', 'Natural', '136.0', 'g', '211', '211'");
+        }
+        db.close();
     }
 }
