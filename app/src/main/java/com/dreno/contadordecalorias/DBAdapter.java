@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBAdapter {
     private static final String databaseName = "calorias";
-    private static final int databaseVersion = 14;
+    private static final int databaseVersion = 16;
 
     private final Context context;
     private DatabaseHelper DBHelper;
@@ -29,6 +29,30 @@ public class DBAdapter {
         public void onCreate(SQLiteDatabase db) {
             try {
                 // criação das tabelas
+                db.execSQL("CREATE TABLE IF NOT EXISTS usuarios (" +
+                        " user_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        " user_email VARCHAR, " +
+                        " user_pass VARCHAR, " +
+                        " user_salt VARCHAR, " +
+                        " user_apelido VARCHAR," +
+                        " user_aniversario DATE, " +
+                        " user_genero INT," +
+                        " user_local, " +
+                        " user_altura, " +
+                        " user_atividade INT, " +
+                        " user_peso INT," +
+                        " user_peso_objetivo INT," +
+                        " user_peso_objetivo_nivel INT, " +
+                        " user_ultimo_visto TIME," +
+                        " user_nota VARCHAR);");
+                        db.execSQL("CREATE TABLE IF NOT EXISTS diario_calorias_consumidas (" +
+                        " cal_consumidas_id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        " cal_consumidas_data DATE, " +
+                        " cal_consumidas_refeicaoN INT, " +
+                        " cal_consumidas_calorias INT, " +
+                        " cal_consumidas_proteina INT, " +
+                        " cal_consumidas_carboidrato INT, " +
+                        " cal_consumidas_gordura INT);");
                 db.execSQL("CREATE TABLE IF NOT EXISTS diario (" +
                         " diario_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                         " diario_data DATE, " +
@@ -79,6 +103,7 @@ public class DBAdapter {
         @Override
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             // Tabelas a serem dropadas
+            db.execSQL("DROP TABLE IF EXISTS diario_calorias_consumidas");
             db.execSQL("DROP TABLE IF EXISTS comidas");
             db.execSQL("DROP TABLE IF EXISTS categorias");
             db.execSQL("DROP TABLE IF EXISTS diario");
