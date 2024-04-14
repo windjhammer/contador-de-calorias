@@ -1,13 +1,32 @@
 <resources>
-    <string name="app_name">ContadorDeCalorias</string>
+    <string name="app_name">NutriCal</string>
     <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Próximo</string>
-    <string name="previous">Anterior</string>
+    <string name="email">Email</string>
+    <string name="aniversario">Data de Nascimento</string>
+    <string name="genero">Gênero</string>
+    <string name="altura">Altura</string>
+    <string name="atividade">Nível de Atividade</string>
+    <string name="peso">Peso</string>
+    <string name="peso_objetivo">Peso Desejado</string>
+    <string name="unidade_medida">Unidade de Medida</string>
+    <string name="metric">Sistema Métrico</string>
+    <string name="imperial">Sistema Imperial</string>
+    
+    <string name="dia">Dia</string>
+    <string name="mes">Mês</string>
+    <string name="ano">Ano</string>
 
-    <string name="lorem_ipsum">
-        Teste de Texto.
-    </string>
+    <string name="janeiro">Janeiro</string>
+    <string name="fevereiro">Fevereiro</string>
+    <string name="marco">Março</string>
+    <string name="abril">Abril</string>
+    <string name="maio">Maio</string>
+    <string name="junho">Junho</string>
+    <string name="julho">Julho</string>
+    <string name="agosto">Agosto</string>
+    <string name="setembro">Setembro</string>
+    <string name="outubro">Outubro</string>
+    <string name="novembro">Novembro</string>
+    <string name="dezembro">Dezembro</string>
+
 </resources>

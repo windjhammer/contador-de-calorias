@@ -1,32 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="35dp"
+    android:layout_marginRight="25dp">
 
+    <!-- TextView para o texto "Nutrical" e a imagem -->
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_vertical">
 
-        <!-- TextView para o texto -->
+        <!-- TextView para o texto "Nutrical" -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
             android:text="Nutrical"
-            android:textColor="#000000"
-            android:textSize="18sp"></TextView>
+            android:textSize="18sp" />
 
+        <!-- ImageView para a imagem -->
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="72dp"
-            android:src="@drawable/logo">
-        </ImageView>
-
+            android:src="@drawable/logo" />
     </LinearLayout>
 
-</ScrollView>
+    <!-- TextView adicional -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/email"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/aniversario" />
+
+            <EditText
+                android:id="@+id/editTextDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date" />
+        </TableRow>
+
+    </TableLayout>
+
+    <!-- Aqui você pode adicionar mais TextViews dinamicamente no código Java/Kotlin -->
+
+</LinearLayout>
