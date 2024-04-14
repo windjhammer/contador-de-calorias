@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         DBSetupInsert setupInsert = new DBSetupInsert(this);
-        setupInsert.setupInsertToComidas("NULL, 'Amendoim Mendorato', 'Santa Helena', '27', 'g', '1', 'pct', '138', '4.6', '12', '8', NULL, NULL, NULL, NULL, NULL, NULL, '42', 'mendorato_thumb.jpg', 'mendorato_a.jpg', 'mendorato_b.jpg', 'mendorato_c.jpg', NULL");
-        db.close();
+        setupInsert.insertAllComidas();
+        //db.close();
     }
 }

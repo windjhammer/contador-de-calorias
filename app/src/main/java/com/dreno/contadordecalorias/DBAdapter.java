@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBAdapter {
     private static final String databaseName = "calorias";
-    private static final int databaseVersion = 7;
+    private static final int databaseVersion = 8;
 
     private final Context context;
     private DatabaseHelper DBHelper;
