@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBAdapter {
     private static final String databaseName = "calorias";
-    private static final int databaseVersion = 13;
+    private static final int databaseVersion = 14;
 
     private final Context context;
     private DatabaseHelper DBHelper;
@@ -29,7 +29,17 @@ public class DBAdapter {
         public void onCreate(SQLiteDatabase db) {
             try {
                 // criação das tabelas
-
+                db.execSQL("CREATE TABLE IF NOT EXISTS diario (" +
+                        " diario_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                        " diario_data DATE, " +
+                        " diario_numero_refeicao INT," +
+                        " diario_porcao DOUBLE, " +
+                        " diario_medidor_porcao VARCHAR, " +
+                        " diario_calorias_calculado DOUBLE, " +
+                        " diario_proteina_calculado DOUBLE, " +
+                        " diario_carboidrato_calculado DOUBLE, " +
+                        " diario_gordura_calculado DOUBLE, " +
+                        " diario_gordura_refeicao_id INT);");
                 db.execSQL("CREATE TABLE IF NOT EXISTS categorias (" +
                         " categoria_id INTEGER PRIMARY KEY AUTOINCREMENT," +
                         " categoria_nome VARCHAR," +
@@ -71,6 +81,7 @@ public class DBAdapter {
             // Tabelas a serem dropadas
             db.execSQL("DROP TABLE IF EXISTS comidas");
             db.execSQL("DROP TABLE IF EXISTS categorias");
+            db.execSQL("DROP TABLE IF EXISTS diario");
             onCreate(db);
 
             String TAG = "Tag";
