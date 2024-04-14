@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         if (numberRows < 1) {
             DBSetupInsert setupInsert = new DBSetupInsert(this);
             setupInsert.insertAllComidas();
+            setupInsert.insertAllCategorias();
 
         }
 

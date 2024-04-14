@@ -10,6 +10,20 @@ public class DBSetupInsert {
         this.context = ctx;
     }
 
+    public void setupInsertToCategorias(String values) {
+        DBAdapter db = new DBAdapter(context);
+        db.open();
+        db.insert("categorias", "categoria_id, categoria_nome, categoria_parent_id, categoria_icone, categoria_nota",
+                values);
+    }
+
+    public void insertAllCategorias() {
+        setupInsertToCategorias("NULL, 'Pães', '0', '', NULL");
+        setupInsertToCategorias("NULL, 'Pão', '1', '', NULL");
+        setupInsertToCategorias("NULL, 'Cereais', '1', '', NULL");
+
+    }
+
     public void setupInsertToComidas(String values) {
 
         DBAdapter db = new DBAdapter(context);

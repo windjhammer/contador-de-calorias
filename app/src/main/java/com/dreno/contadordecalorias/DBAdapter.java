@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBAdapter {
     private static final String databaseName = "calorias";
-    private static final int databaseVersion = 9;
+    private static final int databaseVersion = 13;
 
     private final Context context;
     private DatabaseHelper DBHelper;
@@ -70,6 +70,7 @@ public class DBAdapter {
         public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
             // Tabelas a serem dropadas
             db.execSQL("DROP TABLE IF EXISTS comidas");
+            db.execSQL("DROP TABLE IF EXISTS categorias");
             onCreate(db);
 
             String TAG = "Tag";
