@@ -21,16 +21,15 @@ public class MainActivity extends AppCompatActivity {
         DBAdapter db = new DBAdapter(this);
         db.open();
 
-        //Contador de colunas na tabela comidas
+        // Contador de colunas na tabela comidas
         int numberRows = db.contadorDeNotasGravadas("comidas");
 
-        if (numberRows < 1){
-            db.insert("comidas", "comida_id, comida_nome, comida_produtor, comida_porcao, comida_medidor_de_porcao, comida_calorias, comida_calorias_calculado",
-                    "NULL, 'Ovo, inteiro, cozido', 'Natural', '136.0', 'g', '211', '211'");
+        if (numberRows < 1) {
+            DBSetupInsert setupInsert = new DBSetupInsert(this);
+            setupInsert.insertAllComidas();
+
         }
 
-        DBSetupInsert setupInsert = new DBSetupInsert(this);
-        setupInsert.insertAllComidas();
-        //db.close();
+        // db.close();
     }
 }
