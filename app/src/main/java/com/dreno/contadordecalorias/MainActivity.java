@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         int numberRows = db.contadorDeNotasGravadas("comidas");
 
         if (numberRows < 1) {
+            Toast.makeText(this, "Funcionando", Toast.LENGTH_LONG).show();
             DBSetupInsert setupInsert = new DBSetupInsert(this);
             setupInsert.insertAllComidas();
             setupInsert.insertAllCategorias();
