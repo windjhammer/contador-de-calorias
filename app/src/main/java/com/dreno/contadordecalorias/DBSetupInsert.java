@@ -21,6 +21,10 @@ public class DBSetupInsert {
         setupInsertToCategorias("NULL, 'Pães', '0', '', NULL");
         setupInsertToCategorias("NULL, 'Pão', '1', '', NULL");
         setupInsertToCategorias("NULL, 'Cereais', '1', '', NULL");
+        setupInsertToCategorias("NULL, 'Frutas, Legumes e Vegetais', '0', '', NULL");
+        setupInsertToCategorias("NULL, 'Carne, Frango e Peixe', 0, '', NULL");
+        setupInsertToCategorias("NULL, 'Bebidas', 0, '', NULL");
+        setupInsertToCategorias("NULL, 'Queijos', 0, '', NULL");
 
     }
 
